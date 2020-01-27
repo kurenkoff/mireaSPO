@@ -1,0 +1,29 @@
+function funcone(int arg){
+while(arg < 500){
+print '1';
+arg = arg + 1;
+}
+return;
+}
+
+function functwo(int arg){
+while(arg < 1000){
+print '2';
+arg = arg + 1;
+}
+return;
+}
+
+Thread t1;
+Thread t2;
+
+int a = 2 + 1;
+int b = a + 50;
+t1.run(funcone(a));
+t2.run(functwo(b));
+t1.join();
+t2.join();
+
+funcone(a);
+functwo(b);
+print 'end';";
